@@ -1,0 +1,37 @@
+<div class="place-form-container">
+    <a href="/places/dashboard">Back</a>
+    <h1>Editing a Place:</h1>
+    <form action="/places/edit" method="POST">
+        <input type="hidden" name="id" value="{{place.id}}">
+        <div class="form-control">
+            <label for="url">Url:</label>
+            <input type="text" name="url" placeholder="Enter the image url..." value="{{place.url}}">
+        </div>
+        <div class="form-control">
+            <label for="title">Place:</label>
+            <input type="text" name="title" placeholder="Enter the place..." value="{{place.title}}">
+        </div>
+        <div class="form-control">
+            <label for="description">Description:</label>
+            <input type="text" name="description" placeholder="Enter the description..." value="{{place.description}}">
+        </div>
+        <div class="form-control">
+            <label for="price">Price:</label>
+            <input type="number" name="price" placeholder="Enter the daily price..." value="{{place.price}}">
+        </div>
+        <div class="form-control">
+            <label for="planet">Planet:</label>
+            <select name="planet" placeholder="Which planet?..." value="{{place.planet}}">
+                <option value="mercury">Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="earth">Earth</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+                <option value="neptune">Neptune</option>
+            </select>
+        </div>
+        <input type="submit" value="Editar Pensamento">
+    </form>
+</div>

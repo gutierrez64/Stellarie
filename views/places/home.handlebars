@@ -1,0 +1,46 @@
+<div class="home-header">
+    {{#if search}}
+        <h1>You are searching for: <span>{{search}}</span></h1>
+        {{#if placesQty}}
+            <p>Were found <span>{{placesQty}}</span> places</p>
+        {{else}}
+            <p>No place was found for the term <span>{{search}}</span></p>
+        {{/if}}
+    {{else}}
+        <h1>Meet some of our <span>Places</span>:</h1>
+    {{/if}}
+    <form action="/" method="GET">
+        <input type="text" name="search" placeholder="Are you looking for something?">
+        <input type="submit" class="btn" value="Search">
+    </form>
+    <div class="order-container">
+        <span>Order by:</span>
+        <form action="/" method="GET">
+            <input type="hidden" name="search" value="{{this.search}}">
+            <input type="hidden" name="order" value="new">
+            <button type="submit"><i class="bi bi-arrow-up"></i></button>
+        </form>
+        <form action="/" method="GET">
+            <input type="hidden" name="search" value="{{this.search}}">
+            <input type="hidden" name="order" value="old">
+            <button type="submit"><i class="bi bi-arrow-down"></i></button>
+        </form>
+        <a href="/">Clean</a>
+    </div>
+</div>
+<div class="places-container">
+    {{#each places}}
+        <figure>
+            <img src="{{this.url}}" alt="{{this.title}}">
+            <blockquote>
+                "{{this.title}}"
+            </blockquote>
+            <p>{{this.description}}</p>
+            <br>
+            <figcaption>Owner: <span>{{this.User.name}}</span></figcaption>
+            <figcaption>Daily: <span>{{this.price}} USD</span></figcaption>
+            <br>
+            <a href="/planets/{{this.planet}}">{{this.planet}}</a>
+        </figure>
+    {{/each}}
+</div>

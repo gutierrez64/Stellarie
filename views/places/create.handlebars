@@ -1,0 +1,36 @@
+<div class="place-form-container">
+    <a href="/places/dashboard">Back</a>
+    <h1>Creating a place:</h1>
+    <form action="/places/add" method="POST">
+        <div class="form-control">
+            <label for="url">Url:</label>
+            <input type="text" name="url" placeholder="Image url...">
+        </div>
+        <div class="form-control">
+            <label for="title">Place:</label>
+            <input type="text" name="title" placeholder="Enter the place...">
+        </div>
+        <div class="form-control">
+            <label for="description">Description:</label>
+            <input type="text" name="description" placeholder="Enter the description...">
+        </div>
+        <div class="form-control">
+            <label for="price">Price:</label>
+            <input type="number" name="price" placeholder="Enter the daily price...">
+        </div>
+        <div class="form-control">
+            <label for="planet">Planet:</label>
+            <select name="planet" placeholder="Which planet?...">
+                <option value="mercury">Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="earth">Earth</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+                <option value="neptune">Neptune</option>
+            </select>
+        </div>
+        <input type="submit" value="Create place">
+    </form>
+</div>

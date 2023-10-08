@@ -1,0 +1,27 @@
+<div class="dashboard">
+    <div class="title-container">
+        <h2>Dashboard</h2>
+        <a href="/places/add" class="btn">Create place</a>
+    </div>
+    <h3>Yours places</h3>
+    <ul>
+        {{#each places}}
+            <li>
+                <span class="label">{{this.title}}</span>
+                <p class="label">{{this.description}}</p>
+                <span class="label">{{this.price}}</span>
+                <span class="label">{{this.planet}}</span>
+                <span class="actions">
+                    <a href="/places/edit/{{this.id}}" class="btn">Edit</a>
+                    <form action="/places/remove" method="POST">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="Delete" class="btn">
+                    </form>
+                </span>
+            </li>
+        {{/each}}
+    </ul>
+    {{#if emptyPlaces}}
+        <p>You have no place yet, start <a href="/places/add">here!</a></p>
+    {{/if}}
+</div>
