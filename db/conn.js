@@ -1,8 +1,9 @@
 const { Sequelize } = require('sequelize')
 
-const sequelize = new Sequelize('spacebnb', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql'
+const sequelize = new Sequelize('spacebnb', `${process.env.ROOT}`, `${process.env.PASSWORD}`, {
+    host: 'db4free.net',
+    port: 3306,
+    dialect: 'mysql',
 })
 
 try {
